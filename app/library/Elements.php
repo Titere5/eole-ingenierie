@@ -16,30 +16,27 @@ class Elements extends Component
                 'action' => 'index'
             ],
             'pages' => [
-                'caption' => 'Gestion des pages',
+                'caption' => 'La team',
                 'action' => 'index'
             ],
             'services' => [
-                'caption' => 'Services',
+                'caption' => 'Nos moyens',
                 'action' => 'index',
-                'drop' => 1
             ],
             'informatique' => [
-                'caption' => 'Informatique',
+                'caption' => 'Nos références',
                 'action' => 'index',
-                'drop' => 2
             ],
             'formations' => [
-                'caption' => 'Formations',
+                'caption' => 'L\'ingénierie qualifiée',
                 'action' => 'index',
-                'drop' => 3
             ],
             'boutique' => [
-                'caption' => 'Boutique',
+                'caption' => 'Projet en cours',
                 'action' => 'index'
             ],
             'about' => [
-                'caption' => 'A propos',
+                'caption' => 'Nos partenaires',
                 'action' => 'index'
             ],
             'contact' => [
@@ -52,14 +49,14 @@ class Elements extends Component
                 'caption' => 'Se connecter / S\'inscrire',
                 'action' => 'index'
             ],
-            'admin' => [
-                'caption' => 'Administration',
-                'action' => 'index'
-            ],
-            'profile' => [
-                'caption' => 'Mon Profil',
-                'action' => 'index',
-            ]
+            // 'admin' => [
+            //     'caption' => 'Administration',
+            //     'action' => 'index'
+            // ],
+            // 'profile' => [
+            //     'caption' => 'Mon Profil',
+            //     'action' => 'index',
+            // ]
         ]
     ];
 
@@ -147,7 +144,7 @@ class Elements extends Component
                   ]);
 
 
-                  echo $this->tag->linkTo(['pages/displayPage/' . $drop[0]->id_Page, $option['caption'], "class" => "nav-link"]);
+                  // echo $this->tag->linkTo(['pages/displayPage/' . $drop[0]->id_Page, $option['caption'], "class" => "nav-link"]);
                 }
                 echo '</li>';
             }

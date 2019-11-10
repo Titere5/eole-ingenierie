@@ -2,11 +2,10 @@
 
 use Phalcon\Mvc\Model;
 
-class Marques extends Model
+class Projects extends Model
 {
     /**
      * @var integer
      */
-    public $id_Marque;
-
+    public $id_Project;
 }

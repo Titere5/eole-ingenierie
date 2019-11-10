@@ -24,11 +24,11 @@ class AdminController extends ControllerBase
         $this->flash->success('Bienvenue administrateur ' . $user->nom_Users);
     }
 
-    public function productsAction(){
+    public function membersAction(){
 
           return $this->dispatcher->forward(
                     [
-                        "controller" => "products",
+                        "controller" => "members",
                         "action"     => "index",
                     ]
                 );
@@ -51,33 +51,5 @@ class AdminController extends ControllerBase
 
     }
 
-    /**
-    * Gestion soutien scolaire
-    *
-    */
-    public function schoolAction()
-    {
-        return $this->dispatcher->forward(
-            [
-                "controller" => "school",
-                "action"     => "index",
-            ]
-        );
-
-    }
-
-    /**
-    * Gestion soutien scolaire
-    *
-    */
-    public function rightAction()
-    {
-        return $this->dispatcher->forward(
-            [
-                "controller" => "right",
-                "action"     => "index",
-            ]
-        );
-
-    }
+  
 }

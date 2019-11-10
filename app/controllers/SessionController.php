@@ -33,7 +33,6 @@ class SessionController extends ControllerBase
             'id' => $user->id_Users,
             'name' => $user->nom_Users,
             'role' => $user->id_Role,
-            'statut' => $user->id_Statut
         ]);
     }
 

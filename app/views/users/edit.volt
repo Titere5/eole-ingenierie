@@ -24,7 +24,6 @@
     </fieldset>
 
     <p>Le niveau de rôle actuel de l'utilisateur est <b>{{ role.nom_Role}}</b></p>
-    <p>Le statut actuel de l'utilisateur est <b>{{ role.type_Statut}}</b></p>
 
     {% if user.file_Users is not empty %}
 

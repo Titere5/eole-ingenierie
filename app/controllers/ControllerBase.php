@@ -7,7 +7,7 @@ class ControllerBase extends Controller
 
     protected function initialize()
     {
-        $this->tag->prependTitle('Espace Furcan | ');
+        $this->tag->prependTitle('Eole ingenierie | ');
         $this->view->setTemplateAfter('main');
     }
 }

@@ -17,44 +17,11 @@ class UsersController extends ControllerBase
     */
     public function indexAction()
     {
-        $users_validation = Users::find("validateStatut_Users = '0'");
-        $this->view->users_validation = $users_validation;
+
 
         $users = Users::find();
         $this->view->users = $users;
-        // $numberPage = 1;
-        // if ($this->request->isPost()) {
-        //     $query = Criteria::fromInput($this->di, "Users", $this->request->getPost());
-        //     $this->persistent->searchParams = $query->getParams();
-        // } else {
-        //     $numberPage = $this->request->getQuery("page", "int");
-        // }
-        //
-        // $parameters = [];
-        //
-        // $phql = 'SELECT Users.*, Roles.* FROM Users INNER JOIN Roles ON Roles.id_Role = Users.id_Role';
-        //
-        // $users = $this->modelsManager->executeQuery($phql);
-        // // var_dump($users);die;
-        // if (count($users) == 0) {
-        //     $this->flash->notice("The search did not find any users");
-        //
-        //     return $this->dispatcher->forward(
-        //         [
-        //             "controller" => "users",
-        //             "action"     => "index",
-        //         ]
-        //     );
-        // }
-        //
-        // $paginator = new Paginator([
-        //     "data"  => $users,
-        //     "limit" => 100,
-        //     "page"  => $numberPage
-        // ]);
-        // // var_dump($paginator);die;
-        // $this->view->page = $paginator->getPaginate();
-        // $this->view->users = $users;
+
 
     }
 
@@ -143,52 +110,51 @@ class UsersController extends ControllerBase
     */
     public function editAction($id)
     {
-        $roles = Roles::find();
-        $form = new UsersForm((object)['id_Users' => $id], ['edit' => true]);
-        // var_dump($user['0']->users->nom_Users);die;
-        if (!$this->request->isPost()) {
-
-            $phql = 'SELECT Users.*, Roles.nom_Role, Statuts.type_Statut
-            FROM Users
-            INNER JOIN Roles ON Roles.id_Role = Users.id_Role
-            INNER JOIN Statuts ON Statuts.id_Statut = Users.id_Statut
-            WHERE id_Users=' . $id;
-            $users = $this->modelsManager->executeQuery($phql);
-            //La requete renvoie un tableau d'user
-            $user = $users['0']->users;
-            $role_statuts = $users['0'];
-            // var_dump($user['0']->nom_Role);die;
-            $this->tag->setDefault('nom_Users', $user->nom_Users);
-            $this->tag->setDefault('prenom_Users', $user->prenom_Users);
-            $this->tag->setDefault('mail_Users', $user->mail_Users);
-            $this->tag->setDefault('tel_Users', $user->tel_Users);
-            $this->tag->setDefault('adresse_Users', $user->adresse_Users);
-            $this->tag->setDefault('ville_Users', $user->ville_Users);
-            $this->tag->setDefault('postal_Users', $user->postal_Users);
-            $this->tag->setDefault('file_Users', $user->file_Users);
-            $this->tag->setDefault('id_Role', $user->id_Role);
-            $this->tag->setDefault('id_Statut',  $user->id_Statut);
-
-            // var_dump($this->tag->setDefault('nom_Role', $role_statuts->nom_Role));die;
-
-            if (!$user) {
-                $this->flash->error("L'utilisateur n'a pas été trouvé");
-
-                return $this->dispatcher->forward(
-                    [
-                        "controller" => "users",
-                        "action"     => "index",
-                    ]
-                );
-            }
-            $this->view->roles = $roles;
-            $this->view->role = $role_statuts;
-            $this->view->user = $user;
-            // var_dump($user);die;
-
-
-            $this->view->form = $form;
-        }
+        // $roles = Roles::find();
+        // $form = new UsersForm((object)['id_Users' => $id], ['edit' => true]);
+        // // var_dump($user['0']->users->nom_Users);die;
+        // if (!$this->request->isPost()) {
+        //
+        //     $phql = 'SELECT Users.*, Roles.nom_Role, Statuts.type_Statut
+        //     FROM Users
+        //     INNER JOIN Roles ON Roles.id_Role = Users.id_Role
+        //     INNER JOIN Statuts ON Statuts.id_Statut = Users.id_Statut
+        //     WHERE id_Users=' . $id;
+        //     $users = $this->modelsManager->executeQuery($phql);
+        //     //La requete renvoie un tableau d'user
+        //     $user = $users['0']->users;
+        //     $role_statuts = $users['0'];
+        //     // var_dump($user['0']->nom_Role);die;
+        //     $this->tag->setDefault('nom_Users', $user->nom_Users);
+        //     $this->tag->setDefault('prenom_Users', $user->prenom_Users);
+        //     $this->tag->setDefault('mail_Users', $user->mail_Users);
+        //     $this->tag->setDefault('tel_Users', $user->tel_Users);
+        //     $this->tag->setDefault('adresse_Users', $user->adresse_Users);
+        //     $this->tag->setDefault('ville_Users', $user->ville_Users);
+        //     $this->tag->setDefault('postal_Users', $user->postal_Users);
+        //     $this->tag->setDefault('file_Users', $user->file_Users);
+        //     $this->tag->setDefault('id_Role', $user->id_Role);
+        //
+        //     // var_dump($this->tag->setDefault('nom_Role', $role_statuts->nom_Role));die;
+        //
+        //     if (!$user) {
+        //         $this->flash->error("L'utilisateur n'a pas été trouvé");
+        //
+        //         return $this->dispatcher->forward(
+        //             [
+        //                 "controller" => "users",
+        //                 "action"     => "index",
+        //             ]
+        //         );
+        //     }
+        //     $this->view->roles = $roles;
+        //     $this->view->role = $role_statuts;
+        //     $this->view->user = $user;
+        //     // var_dump($user);die;
+        //
+        //
+        //     $this->view->form = $form;
+        // }
     }
 
     /**
