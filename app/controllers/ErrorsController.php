@@ -1,6 +1,5 @@
 <?php
 
-
 /**
  * ErrorsController
  *
@@ -10,7 +9,7 @@ class ErrorsController extends ControllerBase
 {
     public function initialize()
     {
-        $this->tag->setTitle('Error');
+        $this->tag->setTitle('Oops!');
         parent::initialize();
     }
 

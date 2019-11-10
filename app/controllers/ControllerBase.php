@@ -1,6 +1,5 @@
 <?php
 
-
 use Phalcon\Mvc\Controller;
 
 class ControllerBase extends Controller
@@ -8,7 +7,7 @@ class ControllerBase extends Controller
 
     protected function initialize()
     {
-        $this->tag->prependTitle('DTT | ');
+        $this->tag->prependTitle('Eole ingenierie | ');
+        $this->view->setTemplateAfter('main');
     }
-
 }

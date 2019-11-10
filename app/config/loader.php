@@ -2,7 +2,6 @@
 
 $loader = new \Phalcon\Loader();
 
-
 /**
  * We're a registering a set of directories taken from the configuration file
  */
@@ -14,11 +13,14 @@ $loader->registerDirs([
     APP_PATH . $config->application->formsDir
 ])->register();
 
+/**
+ * We're a registering a set of namespaces
+ */
 $loader->registerNamespaces([
-    'Eole-ingenierie54\Models'      => APP_PATH . $config->application->modelsDir,
-    'Eole-ingenierie54\Controllers' => APP_PATH . $config->application->controllersDir,
-    'Eole-ingenierie54\Forms'       => APP_PATH . $config->application->formsDir,
-    'Eole-ingenierie54'             => APP_PATH . $config->application->libraryDir,
+    'espacefurcan\Models'      => APP_PATH . $config->application->modelsDir,
+    'espacefurcan\Controllers' => APP_PATH . $config->application->controllersDir,
+    'espacefurcan\Forms'       => APP_PATH . $config->application->formsDir,
+    'espacefurcan'             => APP_PATH . $config->application->libraryDir,
 ])->register();
 
 $loader->registerClasses([

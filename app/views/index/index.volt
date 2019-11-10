@@ -1,7 +1,4 @@
-
 {{ content() }}
-
-
-{# coucou #}
-{{ assets.outputCss() }}
-{{ this.flashSession.output() }}
+<!--   debut -->
+bonsoir
+<!--Fin d'affichage du body -->

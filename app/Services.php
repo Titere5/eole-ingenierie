@@ -19,7 +19,15 @@ class Services extends \Base\Services
     {
         $eventsManager = new EventsManager;
 
+        /**
+        * Check if the user is allowed to access certain action using the SecurityPlugin
+        */
+        $eventsManager->attach('dispatch:beforeExecuteRoute', new SecurityPlugin);
 
+        /**
+        * Handle exceptions and not-found exceptions using NotFoundPlugin
+        */
+        $eventsManager->attach('dispatch:beforeException', new NotFoundPlugin);
 
         $dispatcher = new Dispatcher;
         $dispatcher->setEventsManager($eventsManager);
@@ -79,8 +87,6 @@ class Services extends \Base\Services
 
         return new $dbClass($config);
     }
-
-
 
     /**
     * If the configuration specify the use of metadata adapter use it or use memory otherwise
