@@ -1,1 +1,1 @@
-ui
+Regarde les fichiers dans views, tu prends tous les sous dossiers et tu regardes les fichiers index.volt j'ai mis des balises TODO là où t'as de l'intégartion à faire
