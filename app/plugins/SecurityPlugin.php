@@ -69,6 +69,12 @@ class SecurityPlugin extends Plugin
 				'register',
 				'team',
 				'project',
+				'means',
+				'references',
+				'qualification',
+				'projects',
+				'partners',
+				'contact',
 			];
 
 
@@ -86,6 +92,12 @@ class SecurityPlugin extends Plugin
 				['index','edit'],
 				['index','edit','addMember'],
 				['index','edit','addProject'],
+				['index'],
+				['index'],
+				['index'],
+				['index'],
+				['index'],
+				['index'],
 			];
 			$admin = [
 				['index'],
@@ -101,6 +113,12 @@ class SecurityPlugin extends Plugin
 				['index','edit'],
 				['index','edit','addMember'],
 				['index','edit','addProject'],
+				['index'],
+				['index'],
+				['index'],
+				['index'],
+				['index'],
+				['index'],
 			];
 			$user = [
 				['index'],
@@ -116,6 +134,12 @@ class SecurityPlugin extends Plugin
 				['index'],
 				['index','edit','addMember'],
 				['index','edit','addProject'],
+				['index'],
+				['index'],
+				['index'],
+				['index'],
+				['index'],
+				['index'],
 			];
 
 			$guest = [
@@ -132,6 +156,12 @@ class SecurityPlugin extends Plugin
 				['index'],
 				['index','edit','addMember'],
 				['index','edit','addProject'],
+				['index'],
+				['index'],
+				['index'],
+				['index'],
+				['index'],
+				['index'],
 			];
 			//Tableau de ressources pour les super admins
 			$superAdminRessources = array_combine($controllersRessources,$superAdmin);

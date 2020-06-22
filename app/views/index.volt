@@ -7,7 +7,8 @@
     {{ stylesheet_link('css/bootstrap.min.css') }}
     {{ stylesheet_link('css/style.css') }}
 
-    {{ stylesheet_link('css/style-perso.css') }}
+    {{ stylesheet_link('css/flexslider.css') }}
+    {{ stylesheet_link('css/animate.css') }}
     {{ javascript_include('js/jquery.min.js') }}
     <link href="css/jquery-filestyle.min.js">
     {# <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/jq-3.3.1/dt-1.10.18/datatables.min.css"/> #}
@@ -21,20 +22,20 @@
 </head>
 <body>
 
-    <nav class="navbar  navbar-expand-lg navbar-light top-navbar" data-toggle="sticky-onscroll">
-        <a class="navbar-brand" href="#">Eole ingénierie</a>
-        {{ elements.getMenu() }}
-    </nav>
-
+    <aside id="colorlib-aside" role="complementary" class="border js-fullheight">
+        <h1 id="colorlib-logo">
+            <a href="#">Eole ingenierie</a>
+        </h1>
+        <nav id="colorlib-main-menu" role="navigation">
+            {{ elements.getMenu() }}
+        </nav>
+    </aside>
 
     <!-- Fin du header -->
-    <br>
-    {{ content() }}
+        {{ content() }}
 
-
-    {{ javascript_include('js/utils.js') }}
-
-    {{ javascript_include('js/boutique.js') }}
+    {{ javascript_include('js/main.js') }}
+    {{ javascript_include('js/owl.carousel.min.js') }}
 
     {{ javascript_include('js/jquery-filestyle.min.js') }}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
@@ -56,6 +57,6 @@
 
 
 
-<!-- Fin du footer -->
+    <!-- Fin du footer -->
 </footer>
 </html>

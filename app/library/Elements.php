@@ -13,29 +13,29 @@ class Elements extends Component
         'navbar-left' => [
             'index' => [
                 'caption' => 'Accueil',
-                'action' => 'index'
+                'action' => ''
             ],
-            'pages' => [
+            'team' => [
                 'caption' => 'La team',
                 'action' => 'index'
             ],
-            'services' => [
+            'means' => [
                 'caption' => 'Nos moyens',
                 'action' => 'index',
             ],
-            'informatique' => [
+            'references' => [
                 'caption' => 'Nos références',
                 'action' => 'index',
             ],
-            'formations' => [
+            'qualification' => [
                 'caption' => 'L\'ingénierie qualifiée',
                 'action' => 'index',
             ],
-            'boutique' => [
+            'projects' => [
                 'caption' => 'Projet en cours',
                 'action' => 'index'
             ],
-            'about' => [
+            'partners' => [
                 'caption' => 'Nos partenaires',
                 'action' => 'index'
             ],
@@ -44,47 +44,26 @@ class Elements extends Component
                 'action' => 'index'
             ],
         ],
-        'navbar-right' => [
-            'session' => [
-                'caption' => 'Se connecter / S\'inscrire',
-                'action' => 'index'
-            ],
-            // 'admin' => [
-            //     'caption' => 'Administration',
-            //     'action' => 'index'
-            // ],
-            // 'profile' => [
-            //     'caption' => 'Mon Profil',
-            //     'action' => 'index',
-            // ]
-        ]
     ];
 
-    private $_tabs = [
-        'Produits' => [
-            'controller' => 'products',
-            'action' => 'index',
-            'any' => true
-        ],
-        'Caractéristiques' => [
-            'controller' => 'caracteristiques',
-            'action' => 'index',
-            'any' => true
-        ],
-        'Utilisateurs' => [
-            'controller' => 'users',
-            'action' => 'index',
-            'any' => true
-        ],
-    ];
+    // private $_tabs = [
+    //     'Produits' => [
+    //         'controller' => 'products',
+    //         'action' => 'index',
+    //         'any' => true
+    //     ],
+    //     'Caractéristiques' => [
+    //         'controller' => 'caracteristiques',
+    //         'action' => 'index',
+    //         'any' => true
+    //     ],
+    //     'Utilisateurs' => [
+    //         'controller' => 'users',
+    //         'action' => 'index',
+    //         'any' => true
+    //     ],
+    // ];
 
-    public function getDrop(){
-        return $this->_drop;
-    }
-
-    public function setDrop($drop){
-        $this->_drop = $drop;
-    }
 
     /**
     * Builds header menu with left and right items
@@ -109,43 +88,23 @@ class Elements extends Component
 
         $controllerName = $this->view->getControllerName();
         foreach ($this->_headerMenu as $position => $menu) {
-            echo '<div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">';
+            // echo '<div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">';
             echo '<ul class="navbar-nav pull-right', $position, '">';
             foreach ($menu as $controller => $option) {
-                if (isset($option['drop']) && $option['drop'] != 3){
-                    echo '<li class="nav-item dropdown">';
-                    echo '<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">'.$option['caption'].' </a>';
+                if ($controllerName == $controller) {
+                    echo '<li class="nav-item colorlib-active onglet">';
+                } else {
+                    echo '<li class="nav-item onglet">';
+                }
+                    if($controller === 'index'){
+                        echo $this->tag->linkTo([$option['action'], $option['caption'], "class" => "nav-link"]);
+                    }else {
+                        echo $this->tag->linkTo([$controller . '/' . $option['action'], $option['caption'], "class" => "nav-link"]);
 
-
-                    $drop = Pages::find([
-                        "conditions" => "id_CatePage =" .$option['drop']
-                    ]);
-
-                    echo '<div class="dropdown-menu" aria-labelledby="navbarDropdown">';
-                    foreach ($drop as $key => $value) {
-                        echo '<a class="dropdown-item" href="#">';
-                        echo $this->tag->linkTo(['pages/displayPage/'. $value->id_Page, $value->titre_Page, "class" => "dropdown-item"]);
-                        echo '</a>';
-
-                    }echo '</div>';
-                }else{
-                    if ($controllerName == $controller) {
-                        echo '<li class="nav-item active onglet">';
-                    } else {
-                        echo '<li class="nav-item onglet">';
                     }
-                }
-                if (!isset($option['drop'])){
-                    echo $this->tag->linkTo([$controller . '/' . $option['action'], $option['caption'], "class" => "nav-link"]);
-                }else if ($option['drop'] == 3){
-
-                  $drop = Pages::find([
-                      "conditions" => "id_CatePage = 3"
-                  ]);
 
 
-                  // echo $this->tag->linkTo(['pages/displayPage/' . $drop[0]->id_Page, $option['caption'], "class" => "nav-link"]);
-                }
+
                 echo '</li>';
             }
 
