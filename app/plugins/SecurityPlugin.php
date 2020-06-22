@@ -69,12 +69,15 @@ class SecurityPlugin extends Plugin
 				'register',
 				'team',
 				'project',
+<<<<<<< HEAD
 				'means',
 				'references',
 				'qualification',
 				'projects',
 				'partners',
 				'contact',
+=======
+>>>>>>> 1e572eb5ed5980298a131e69c7da9a677df3a9c8
 			];
 
 
@@ -92,12 +95,15 @@ class SecurityPlugin extends Plugin
 				['index','edit'],
 				['index','edit','addMember'],
 				['index','edit','addProject'],
+<<<<<<< HEAD
 				['index'],
 				['index'],
 				['index'],
 				['index'],
 				['index'],
 				['index'],
+=======
+>>>>>>> 1e572eb5ed5980298a131e69c7da9a677df3a9c8
 			];
 			$admin = [
 				['index'],
@@ -113,12 +119,15 @@ class SecurityPlugin extends Plugin
 				['index','edit'],
 				['index','edit','addMember'],
 				['index','edit','addProject'],
+<<<<<<< HEAD
 				['index'],
 				['index'],
 				['index'],
 				['index'],
 				['index'],
 				['index'],
+=======
+>>>>>>> 1e572eb5ed5980298a131e69c7da9a677df3a9c8
 			];
 			$user = [
 				['index'],
@@ -134,12 +143,15 @@ class SecurityPlugin extends Plugin
 				['index'],
 				['index','edit','addMember'],
 				['index','edit','addProject'],
+<<<<<<< HEAD
 				['index'],
 				['index'],
 				['index'],
 				['index'],
 				['index'],
 				['index'],
+=======
+>>>>>>> 1e572eb5ed5980298a131e69c7da9a677df3a9c8
 			];
 
 			$guest = [
@@ -156,12 +168,15 @@ class SecurityPlugin extends Plugin
 				['index'],
 				['index','edit','addMember'],
 				['index','edit','addProject'],
+<<<<<<< HEAD
 				['index'],
 				['index'],
 				['index'],
 				['index'],
 				['index'],
 				['index'],
+=======
+>>>>>>> 1e572eb5ed5980298a131e69c7da9a677df3a9c8
 			];
 			//Tableau de ressources pour les super admins
 			$superAdminRessources = array_combine($controllersRessources,$superAdmin);

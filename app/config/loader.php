@@ -17,10 +17,17 @@ $loader->registerDirs([
  * We're a registering a set of namespaces
  */
 $loader->registerNamespaces([
+<<<<<<< HEAD
     'eole-ingenierie54\Models'      => APP_PATH . $config->application->modelsDir,
     'eole-ingenierie54\Controllers' => APP_PATH . $config->application->controllersDir,
     'eole-ingenierie54\Forms'       => APP_PATH . $config->application->formsDir,
     'eole-ingenierie54'             => APP_PATH . $config->application->libraryDir,
+=======
+    'espacefurcan\Models'      => APP_PATH . $config->application->modelsDir,
+    'espacefurcan\Controllers' => APP_PATH . $config->application->controllersDir,
+    'espacefurcan\Forms'       => APP_PATH . $config->application->formsDir,
+    'espacefurcan'             => APP_PATH . $config->application->libraryDir,
+>>>>>>> 1e572eb5ed5980298a131e69c7da9a677df3a9c8
 ])->register();
 
 $loader->registerClasses([

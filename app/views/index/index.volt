@@ -1,5 +1,6 @@
 {{ content() }}
 <!--   debut -->
+<<<<<<< HEAD
 {# body de la page index #}
 
 <div id="colorlib-main">
@@ -405,4 +406,7 @@
 <!-- Counters -->
 <script src="js/jquery.countTo.js"></script>
 
+=======
+bonsoir
+>>>>>>> 1e572eb5ed5980298a131e69c7da9a677df3a9c8
 <!--Fin d'affichage du body -->
