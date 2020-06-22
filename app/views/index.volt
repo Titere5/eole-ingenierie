@@ -7,12 +7,8 @@
     {{ stylesheet_link('css/bootstrap.min.css') }}
     {{ stylesheet_link('css/style.css') }}
 
-<<<<<<< HEAD
     {{ stylesheet_link('css/flexslider.css') }}
     {{ stylesheet_link('css/animate.css') }}
-=======
-    {{ stylesheet_link('css/style-perso.css') }}
->>>>>>> 1e572eb5ed5980298a131e69c7da9a677df3a9c8
     {{ javascript_include('js/jquery.min.js') }}
     <link href="css/jquery-filestyle.min.js">
     {# <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/jq-3.3.1/dt-1.10.18/datatables.min.css"/> #}
@@ -26,7 +22,6 @@
 </head>
 <body>
 
-<<<<<<< HEAD
     <aside id="colorlib-aside" role="complementary" class="border js-fullheight">
         <h1 id="colorlib-logo">
             <a href="#">Eole ingenierie</a>
@@ -41,22 +36,7 @@
 
     {{ javascript_include('js/main.js') }}
     {{ javascript_include('js/owl.carousel.min.js') }}
-=======
-    <nav class="navbar  navbar-expand-lg navbar-light top-navbar" data-toggle="sticky-onscroll">
-        <a class="navbar-brand" href="#">Eole ingénierie</a>
-        {{ elements.getMenu() }}
-    </nav>
 
-
-    <!-- Fin du header -->
-    <br>
-    {{ content() }}
-
-
-    {{ javascript_include('js/utils.js') }}
-
-    {{ javascript_include('js/boutique.js') }}
->>>>>>> 1e572eb5ed5980298a131e69c7da9a677df3a9c8
 
     {{ javascript_include('js/jquery-filestyle.min.js') }}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
@@ -76,12 +56,5 @@
     </div>
 
 
-
-
-<<<<<<< HEAD
-    <!-- Fin du footer -->
-=======
-<!-- Fin du footer -->
->>>>>>> 1e572eb5ed5980298a131e69c7da9a677df3a9c8
 </footer>
 </html>
